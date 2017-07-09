@@ -103,51 +103,12 @@
   .v-select .buttons {
     position: absolute;
     bottom: 0;
-    right: 0;
+    right: 40px;
   }
   .v-select .no-options {
     text-align: center;
   }
-  /* Selected Tags */
-  .v-select .selected-tag {
-    color: #333;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    height: 26px;
-    margin: 4px 1px 0px 3px;
-    padding: 1px 0.25em;
-    float: left;
-    line-height: 24px;
-  }
-  .v-select.single .selected-tag {
-    background-color: transparent;
-    border-color: transparent;
-  }
-  .v-select.single.open .selected-tag {
-    position: absolute;
-    opacity: .5;
-  }
-  .v-select.single.open.searching .selected-tag,
-  .v-select.single.loading .selected-tag {
-    display: none;
-  }
-  .v-select .selected-tag .close {
-    float: none;
-    margin-right: 0;
-    font-size: 20px;
-    appearance: none;
-    padding: 0;
-    cursor: pointer;
-    background: 0 0;
-    border: 0;
-    font-weight: 700;
-    line-height: 1;
-    color: #000;
-    text-shadow: 0 1px 0 #fff;
-    filter: alpha(opacity=20);
-    opacity: .2;
-  }
+  
   .v-select.single.searching:not(.open):not(.loading) input[type="search"] {
     opacity: .2;
   }
