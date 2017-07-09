@@ -100,11 +100,10 @@
     list-style: none;
     background: #fff;
   }
-  .v-select .dropdown-menu .buttons {
+  .v-select .buttons {
     position: absolute;
     bottom: 0;
     right: 0;
-    left: 0
   }
   .v-select .no-options {
     text-align: center;
@@ -303,10 +302,16 @@
 
       <i v-if="!noDrop" ref="openIndicator" role="presentation" class="open-indicator"></i>
 
+      <div class="buttons" v-show="dropdownOpen">
+        <slot name="buttons"></slot>
+      </div>
+
       <slot name="spinner">
         <div class="spinner" v-show="mutableLoading">Loading...</div>
       </slot>
     </div>
+
+
 
     <transition :name="transition">
       <ul ref="dropdownMenu" v-if="dropdownOpen" class="dropdown-menu" :style="{ 'max-height': maxHeight }">
@@ -317,9 +322,6 @@
         </li>
         <li v-if="!filteredOptions.length" class="no-options">
           <slot name="no-options">Sorry, no matching options.</slot>
-        </li>
-        <li class="buttons">
-          <slot name="buttons"></slot>
         </li>
       </ul>
     </transition>
