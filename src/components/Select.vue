@@ -573,9 +573,12 @@
     },
 
     methods: {
-      reset(e) {
-          this.toggleDropdown(e);
-          this.value = [];
+      close() {
+        this.$refs.search.blur();
+      },
+      reset() {
+        this.close();
+        this.value = [];
       },
       /**
        * Select a given option.
