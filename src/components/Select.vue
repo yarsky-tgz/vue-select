@@ -24,6 +24,9 @@
     height: 20px; width: 10px;
   }
   .v-select .open-indicator:before {
+    background-image: url(/assets/img/select_arrow.png);
+    background-position: center center;
+    background-repeat: no-repeat;
     border-color: rgba(60, 60, 60, .5);
     border-style: solid;
     border-width: 3px 3px 0 0;
@@ -32,14 +35,14 @@
     height: 10px;
     width: 10px;
     vertical-align: top;
-    transform: rotate(133deg);
+    transform: rotate(0deg);
     transition: all 150ms cubic-bezier(1.000, -0.115, 0.975, 0.855);
     transition-timing-function: cubic-bezier(1.000, -0.115, 0.975, 0.855);
     box-sizing: inherit;
   }
   /* Open Indicator States */
   .v-select.open .open-indicator:before {
-    transform: rotate(315deg);
+    transform: rotate(180deg);
   }
   .v-select.loading .open-indicator {
     opacity: 0;
@@ -108,7 +111,7 @@
   .v-select .no-options {
     text-align: center;
   }
-
+  /* Selected Tags */
   .v-select.single.searching:not(.open):not(.loading) input[type="search"] {
     opacity: .2;
   }
@@ -261,7 +264,7 @@
               aria-label="Search for option"
       >
 
-      <i v-if="!noDrop" ref="openIndicator" role="presentation" class="fa fa-sort-asc"></i>
+      <i v-if="!noDrop" ref="openIndicator" role="presentation" class="open-indicator"></i>
 
       <div class="buttons" v-show="dropdownOpen">
         <slot name="buttons"></slot>
