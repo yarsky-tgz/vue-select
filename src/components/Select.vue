@@ -589,6 +589,7 @@
         if (this.isOptionSelected(option)) {
           this.deselect(option)
         } else {
+            option = this.createOption(option)
           if (this.taggable && !this.optionExists(option)) {
             option = this.createOption(option)
           }
@@ -611,6 +612,7 @@
        * @return {void}
        */
       deselect(option) {
+          option = this.createOption(option)
         if (this.multiple) {
           let ref = -1
           this.mutableValue.forEach((val) => {
