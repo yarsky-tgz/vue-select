@@ -100,6 +100,12 @@
     list-style: none;
     background: #fff;
   }
+  .v-select .dropdown-menu .buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0
+  }
   .v-select .no-options {
     text-align: center;
   }
@@ -303,19 +309,19 @@
     </div>
 
     <transition :name="transition">
-      <div>
-        <ul ref="dropdownMenu" v-if="dropdownOpen" class="dropdown-menu" :style="{ 'max-height': maxHeight }">
-          <li v-for="(option, index) in filteredOptions" v-bind:key="index" :class="{ active: isOptionSelected(option), highlight: index === typeAheadPointer }" @mouseover="typeAheadPointer = index">
-            <a @mousedown.prevent="select(option)">
-              <div v-html="getOptionLabel(option)"></div>
-            </a>
-          </li>
-          <li v-if="!filteredOptions.length" class="no-options">
-            <slot name="no-options">Sorry, no matching options.</slot>
-          </li>
-        </ul>
-        <slot name="buttons"></slot>
-      </div>
+      <ul ref="dropdownMenu" v-if="dropdownOpen" class="dropdown-menu" :style="{ 'max-height': maxHeight }">
+        <li v-for="(option, index) in filteredOptions" v-bind:key="index" :class="{ active: isOptionSelected(option), highlight: index === typeAheadPointer }" @mouseover="typeAheadPointer = index">
+          <a @mousedown.prevent="select(option)">
+            <div v-html="getOptionLabel(option)"></div>
+          </a>
+        </li>
+        <li v-if="!filteredOptions.length" class="no-options">
+          <slot name="no-options">Sorry, no matching options.</slot>
+        </li>
+        <li class="buttons">
+          <slot name="buttons"></slot>
+        </li>
+      </ul>
     </transition>
   </div>
 </template>
