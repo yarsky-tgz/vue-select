@@ -55,10 +55,11 @@
     display: block;
     padding: 0;
     background: none;
-    border: 1px solid rgba(60, 60, 60, .26);
+    border: 2px solid #eaeaea;
     border-radius: 0;
     white-space: normal;
     transition: border-radius .25s;
+    margin-bottom: 5px;
   }
   .v-select .dropdown-toggle:after {
     visibility: hidden;
