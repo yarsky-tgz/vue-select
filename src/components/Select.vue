@@ -269,12 +269,12 @@
   <div class="dropdown v-select" :class="dropdownClasses">
     <div ref="toggle" @mousedown.prevent="toggleDropdown" class="dropdown-toggle">
 
-      <span class="selected-tag" v-for="option in valueAsArray" v-bind:key="option.index">
+      <!--span class="selected-tag" v-for="option in valueAsArray" v-bind:key="option.index">
         <div v-html="getOptionLabel(option)"></div>
         <button v-if="multiple" @click="deselect(option)" type="button" class="close" aria-label="Remove option">
           <span aria-hidden="true">&times;</span>
         </button>
-      </span>
+      </span-->
 
       <input
               ref="search"
@@ -311,6 +311,9 @@
         </li>
         <li v-if="!filteredOptions.length" class="no-options">
           <slot name="no-options">Sorry, no matching options.</slot>
+        </li>
+        <li class="buttons">
+          <slot name="buttons"></slot>
         </li>
       </ul>
     </transition>
