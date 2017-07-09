@@ -24,12 +24,9 @@
     height: 20px; width: 10px;
   }
   .v-select .open-indicator:before {
-    background-image: url(/assets/img/select_arrow.png);
+    background-image: url(/assets/img/select-arrow.svg);
     background-position: center center;
     background-repeat: no-repeat;
-    border-color: rgba(60, 60, 60, .5);
-    border-style: solid;
-    border-width: 3px 3px 0 0;
     content: '';
     display: inline-block;
     height: 10px;
