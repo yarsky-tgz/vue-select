@@ -48,26 +48,26 @@
     bottom: 1px;
   }
   /* Dropdown Toggle */
-  /*.v-select .dropdown-toggle {*/
-    /*-webkit-appearance: none;*/
-    /*-moz-appearance: none;*/
-    /*appearance: none;*/
-    /*display: block;*/
-    /*padding: 0;*/
-    /*background: none;*/
-    /*border: 1px solid rgba(60, 60, 60, .26);*/
-    /*border-radius: 0;*/
-    /*white-space: normal;*/
-    /*transition: border-radius .25s;*/
-  /*}*/
-  /*.v-select .dropdown-toggle:after {*/
-    /*visibility: hidden;*/
-    /*display: block;*/
-    /*font-size: 0;*/
-    /*content: " ";*/
-    /*clear: both;*/
-    /*height: 0;*/
-  /*}*/
+  .v-select .dropdown-toggle {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: block;
+    padding: 0;
+    background: none;
+    border: 1px solid rgba(60, 60, 60, .26);
+    border-radius: 0;
+    white-space: normal;
+    transition: border-radius .25s;
+  }
+  .v-select .dropdown-toggle:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
   /* Dropdown Toggle States */
   .v-select.searchable .dropdown-toggle {
     cursor: text;
