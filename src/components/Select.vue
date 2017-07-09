@@ -265,8 +265,8 @@
       <i v-if="!noDrop" ref="openIndicator" role="presentation" class="open-indicator"></i>
 
       <div class="buttons" v-show="dropdownOpen">
-        <button class="btn-primary" @click="toggleDropdown()" type="button"><slot name="button-apply"></slot></button>
-        <button class="btn-default" @click="toggleDropdown() && reset()" type="button"><slot name="button-reset"></slot></button>
+        <button class="btn-primary" @click="toggleDropdown" type="button"><slot name="button-apply"></slot></button>
+        <button class="btn-default" @click="reset" type="button"><slot name="button-reset"></slot></button>
       </div>
 
       <slot name="spinner">
@@ -573,7 +573,8 @@
     },
 
     methods: {
-      reset() {
+      reset(e) {
+          this.toggleDropdown(e);
           this.value = [];
       },
       /**
