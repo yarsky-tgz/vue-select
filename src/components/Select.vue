@@ -312,10 +312,8 @@
         <li v-if="!filteredOptions.length" class="no-options">
           <slot name="no-options">Sorry, no matching options.</slot>
         </li>
-        <li class="buttons">
-          <slot name="buttons"></slot>
-        </li>
       </ul>
+      <slot name="buttons"></slot>
     </transition>
   </div>
 </template>
