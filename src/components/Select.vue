@@ -265,7 +265,8 @@
       <i v-if="!noDrop" ref="openIndicator" role="presentation" class="open-indicator"></i>
 
       <div class="buttons" v-show="dropdownOpen">
-        <slot name="buttons"></slot>
+        <button class="btn-primary" @click="toggleDropdown()" type="button"><slot name="button-apply"></slot></button>
+        <button class="btn-default" @click="toggleDropdown() && reset()" type="button"><slot name="button-reset"></slot></button>
       </div>
 
       <slot name="spinner">
@@ -484,15 +485,6 @@
       },
 
       /**
-       * open flag
-       * @type {Boolean}
-       */
-      open: {
-          type: Boolean,
-          default: false
-      },
-
-      /**
        * Sets the id of the input element.
        * @type {String}
        * @default {null}
@@ -505,6 +497,7 @@
     data() {
       return {
         search: '',
+        open: false,
         mutableValue: null,
         mutableOptions: []
       }
@@ -580,7 +573,9 @@
     },
 
     methods: {
-
+      reset() {
+          this.value = [];
+      },
       /**
        * Select a given option.
        * @param  {Object|String} option
