@@ -484,6 +484,15 @@
       },
 
       /**
+       * open flag
+       * @type {Boolean}
+       */
+      open: {
+          type: Boolean,
+          default: false
+      },
+
+      /**
        * Sets the id of the input element.
        * @type {String}
        * @default {null}
@@ -496,7 +505,6 @@
     data() {
       return {
         search: '',
-        open: false,
         mutableValue: null,
         mutableOptions: []
       }
