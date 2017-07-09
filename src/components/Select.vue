@@ -108,7 +108,7 @@
   .v-select .no-options {
     text-align: center;
   }
-  
+
   .v-select.single.searching:not(.open):not(.loading) input[type="search"] {
     opacity: .2;
   }
@@ -261,7 +261,7 @@
               aria-label="Search for option"
       >
 
-      <i v-if="!noDrop" ref="openIndicator" role="presentation" class="open-indicator"></i>
+      <i v-if="!noDrop" ref="openIndicator" role="presentation" class="fa fa-sort-asc"></i>
 
       <div class="buttons" v-show="dropdownOpen">
         <slot name="buttons"></slot>
