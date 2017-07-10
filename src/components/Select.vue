@@ -586,6 +586,7 @@
        * @return {void}
        */
       select(option) {
+          option = this.createOption(option)
         if (this.isOptionSelected(option)) {
           this.deselect(option)
         } else {
@@ -611,6 +612,7 @@
        * @return {void}
        */
       deselect(option) {
+          option = this.createOption(option)
         if (this.multiple) {
           let ref = -1
           this.mutableValue.forEach((val) => {
@@ -739,9 +741,9 @@
         let exists = false
 
         this.mutableOptions.forEach(opt => {
-          if (typeof opt === 'object' && opt[this.label] === option) {
+          if (typeof opt === 'object' && this.createOption(opt[this.label]) === option) {
             exists = true
-          } else if (opt === option) {
+          } else if (this.createOption(opt) === option) {
             exists = true
           }
         })
