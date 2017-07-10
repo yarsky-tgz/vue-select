@@ -586,7 +586,6 @@
        * @return {void}
        */
       select(option) {
-          option = this.createOption(option)
         if (this.isOptionSelected(option)) {
           this.deselect(option)
         } else {
@@ -612,7 +611,6 @@
        * @return {void}
        */
       deselect(option) {
-          option = this.createOption(option)
         if (this.multiple) {
           let ref = -1
           this.mutableValue.forEach((val) => {
